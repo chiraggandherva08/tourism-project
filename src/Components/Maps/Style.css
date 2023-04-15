@@ -1,0 +1,9 @@
+.map-section {
+    color: black;
+    background: white;
+
+    width: calc(100vw - 40px);
+    padding: 20px;
+
+    margin: auto;
+}
