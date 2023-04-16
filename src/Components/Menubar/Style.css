@@ -75,11 +75,13 @@
     align-items: center;
 
     margin-right: 20px;
+
+    transition-duration: 0.3s;
 }
 
 .menu-link {
     text-decoration: none;
-    color: rgb(232, 232, 232);
+    color: inherit;
 }
 
 #menuitems-list {
@@ -128,14 +130,20 @@
 .line-1 {
     width: 20px;
     height: 2px;
-    background: white;
     margin-bottom: 5px;
 }
 
 .line-2 {
     width: 20px;
     height: 2px;
+}
+
+.line {
     background: white;
+}
+
+.themed-lines {
+    background: black;
 }
 
 @media (max-width: 700px) {
@@ -164,7 +172,6 @@
         border-top-right-radius: 20px;
 
         background: rgb(2, 4, 10);
-        color: rgb(232, 232, 232);
 
         border-style: solid;
         border-width: 0.5px;
@@ -191,12 +198,10 @@
         height: 40px;
         border-style: none;
 
-        color: rgb(186, 186, 186);
         transition-duration: 0.2s;
     }
 
     .items:hover {
-        color: white;
         transform: translateX(10px);
     }
 

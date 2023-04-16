@@ -30,8 +30,8 @@ const Menu = () => {
     return (
         <React.Fragment>
             <div className="cross-icon" onClick={() => toggleMenu()}>
-                <div className="line-1"></div>
-                <div className="line-2"></div>
+                <div className="line-1 line"></div>
+                <div className="line-2 line"></div>
             </div>
 
             <ul className="menubar">

@@ -1,7 +1,8 @@
 import './App.css';
 import Menu from './Components/Menubar/Menu';
 import Header from './Components/Header/Header';
-import Map from './Components/Maps/Map';
+import ChangeTheme from './Components/ChangeTheme/ChangeTheme';
+// import Map from './Components/Maps/Map';
 import TransportData from './Components/TransportationData/TransportData';
 import Translator from './Components/Translator/Translator';
 
@@ -11,7 +12,8 @@ function App() {
       <Menu/>
       <Header/>
       <Translator/> 
-      <Map/>
+      <ChangeTheme/>
+      {/* <Map/> */}
       {/* 
       <TransportData/>*/}
     </div>

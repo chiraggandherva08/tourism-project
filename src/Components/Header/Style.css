@@ -2,48 +2,86 @@
     width: 100vw;
     height: 400px;
 
-    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background: #364ba1;
+
+    padding-top: 100px;
+
+    overflow-x: hidden;
+
+    background-image: url('./travel-hero-img.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.hero-disc {
+    width: calc(100% - 60px);
+    height: 100%;
+}
+
+.user_locations {
+    width: 450px;
+    height: 100px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    font-family: 'Poppins', sans-serif;
-
-    padding-top: 100px;
-    background: rgb(74, 115, 212);
-    background-repeat: no-repeat;
-    background-size: contain;
+    margin: auto;
+    margin-top: 30px;
 }
 
-.hero-image {
-    width: 45%;
+#from-location, #to-location  {
+    width: 200px;
+    height: 40px;
+
+    border-radius: 10px;
+    background: #f2c226;
+
+    outline: 0;
+    border-style: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
-.hero-image img {
-    width: 100%;
+#from-location:hover, #to-location:hover {
+    background: #c69905;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.hero-disc {
-    width: 45%;
-    font-size: 3em;
+@media (max-width: 800px) {
+    .user_locations {
+        flex-direction: column;
+        width: calc(100vw - 20px);
+    }
+
+    .header {
+        margin-top: 20px;
+        height: 300px;
+        background-size: contain;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: 200px;
+        margin-top: 65px;
+        background-size: contain;
+    }
+    
+    .menubar {
+        border-color: transparent;
+    }
 }
 
 @media (max-width: 450px) {
     .header {
-        flex-direction: column;
-    }
-
-    .hero-disc {
-        width: calc(100% - 100px);
-        font-size: 2em;
-    }
-
-    .hero-image {
-        width: calc(100%);
-    }
-
-    .hero-image img {
-        width: 100%;
+        height: 150px;
+        background-size: contain;
     }
 }

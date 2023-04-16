@@ -3,6 +3,8 @@
     height: 500px;
 
     background: rgb(21, 25, 33);
+    color: white;
+
 
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
     border-radius: 5px;
@@ -19,6 +21,13 @@
     transform: translateX(-50%) translateY(-50%);
 
     z-index: 2;
+    
+    transition-duration: 0.3s;
+}
+
+.themed-translator {
+    color: rgb(35, 35, 35);
+    background: #f5f6f7;
 }
 
 .translator-toggle {
@@ -57,10 +66,11 @@
     resize: none;
     border-width: 0.5px;
 
-    background: rgb(21, 25, 33);
-    color: white;
     outline: 0;
-    border-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(140, 140, 140, 0.516);
+
+    background: inherit;
+    color: inherit;
 }
 
 .main-translator-body {
@@ -80,8 +90,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-    color: white;
 }
 
 .output-part {
@@ -118,13 +126,15 @@
     border-color: rgba(0, 0, 0, 0.4);
     border-width: 1px;
 
-    background: black;
-    color: white;
+    background: inherit;
+    color: inherit;
 }
 
 #input-lang::placeholder, #output-lang::placeholder {
-    color: rgb(211, 211, 211);
+    color: rgb(135, 135, 135);
 }
+
+
 
 @media (max-width: 700px) {
     .translator {
@@ -143,7 +153,6 @@
     }
 }
 
-/* Audio Recog */
 #translate-text {
     width: 130px;
     height: 30px;
@@ -158,60 +167,4 @@
 
     cursor: pointer;
     margin-top: 20px;
-}
-
-.box {
-    width: 200px;
-    height: 100px;
-
-    background: white;
-}
-
-.mic{
-    width: 50px;
-    margin: auto;
-    margin-top: 20px;
-}
-
-.micImg:hover {
-    cursor: pointer;
-}
-
-.recognisedText {
-    width: 90%;
-    height: 54%;
-
-    margin: 22px;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: rgb(68, 68, 68);
-    background: rgb(184, 184, 184);
-
-    text-align: center;
-}
-
-.animate {
-    animation-name: animate;
-    animation-duration: 0.7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes animate {
-    0%{
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-    50%{
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-
-        border-bottom-style: solid;
-        border-bottom-width: 2px;
-        border-bottom-color: rgba(255, 255, 255, 0.829);
-    }
-    100%{
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
 }

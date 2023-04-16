@@ -4,10 +4,8 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 const Map = () => {
 
-    const { isLoaded } = useLoadScript({ googleMapApiKey: "AIzaSyDUQl_JJc8Ff0QKfVg0ASZ8n7vJET2AhFY"},);
-    const geoCoordinates = { lat: "44", lng: "-80" };
-    const zoom = 10;
-
+    const isLoaded = true;
+    
     if (!isLoaded) {
         return (
             <div>Loading...</div>
