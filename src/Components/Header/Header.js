@@ -6,7 +6,7 @@ const Header = () => {
     const getUserCurrentLocation = () => {
         const getLocation = (position) => {
             const coordinates = {
-                lat: position.coords.latitude, 
+                lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
             return coordinates;
@@ -27,7 +27,7 @@ const Header = () => {
             </div>
 
             <div className="user_locations">
-                <button id="from-location" onClick={() => {getUserCurrentLocation()}}>grant location access</button>
+                <button id="from-location" onClick={() => { getUserCurrentLocation() }}>grant location access</button>
                 <button id="to-location">Your Destination</button>
             </div>
         </React.Fragment>

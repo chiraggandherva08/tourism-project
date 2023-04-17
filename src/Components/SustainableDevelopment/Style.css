@@ -1,0 +1,102 @@
+.SustainableDevelopment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: calc(100vw - 60px);
+    max-width: 1000px;
+    margin: auto;
+
+    list-style-type: none;
+
+    color: rgb(234, 234, 234);
+}
+
+.SustainableDevelopmentGuidelines {
+    width: calc(100% - 100px);
+
+    background: #ffffff3e;
+    padding: 10px;
+    margin-top: 10px;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition-duration: 0.3s;
+}
+
+.SustainableDevelopmentGuidelines:hover {
+    background: #ffffff69;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sno-sustainable {
+    width: 40px;
+    height: 40px;
+
+    background: #ffffff;
+    color: black;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-sustainable {
+    width: calc(100% - 100px);
+    height: 100%;
+}
+
+#SustainableHeading{ 
+    color: rgb(234, 234, 234);
+
+    width: calc(100vw - 60px);
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 40px;
+
+    text-align: center;
+
+    border-top-style: solid;
+    padding-top: 20px;
+}
+
+#SustainableEnding {
+    color: rgb(234, 234, 234);
+
+    width: calc(100vw - 60px);
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+#highlighted-text {
+    color: rgb(255, 255, 255);
+    font-size: 1.3em;
+}
+
+@media (max-width: 700px) {
+    .SustainableDevelopment {
+        width: calc(100vw - 0px);
+    }
+
+    .SustainableDevelopmentGuidelines {
+        width: calc(100% - 60px);
+    }
+
+    .data-sustainable {
+        width: calc(100% - 60px);
+        height: 100%;
+
+        font-size: 13px;
+    }
+}

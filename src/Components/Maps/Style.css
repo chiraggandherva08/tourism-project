@@ -1,9 +1,18 @@
 .map-section {
     color: black;
-    background: white;
-
-    width: calc(100vw - 40px);
     padding: 20px;
 
     margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-current-location {
+    width: 400px;
+    height: 350px;
+
+    padding: 10px;
+    border-radius: 10px;
 }

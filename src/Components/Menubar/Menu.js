@@ -53,6 +53,9 @@ const Menu = () => {
                         <li className="items" onClick={() => toggleTranslate()}>
                             <a className="menu-link" href="#Translate">Translate</a>
                         </li>
+                        <li className="items" >
+                            <a className="menu-link" href="#SustainableDevelopment">SustainableDevelopment</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
