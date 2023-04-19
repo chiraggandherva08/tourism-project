@@ -6,10 +6,5 @@
 
 body {
     transition-duration: 0.3s;
-    background: linear-gradient(#364ba1, #364ba1, rgb(14, 17, 22));
-}
-
-.themed-body {
-    background: linear-gradient(#364ba1, #364ba1, #f5f6f7);
-
+    background: rgb(247, 247, 247);
 }

@@ -9,38 +9,41 @@
 
     list-style-type: none;
 
-    color: rgb(234, 234, 234);
+    color: rgb(40, 40, 40);
 }
 
 .SustainableDevelopmentGuidelines {
     width: calc(100% - 100px);
 
-    background: #ffffff3e;
     padding: 10px;
     margin-top: 10px;
 
-    border-radius: 10px;
-
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     cursor: pointer;
 
+    border-radius: 5px;
+
     transition-duration: 0.3s;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
 }
 
 .SustainableDevelopmentGuidelines:hover {
-    background: #ffffff69;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .sno-sustainable {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 
-    background: #ffffff;
-    color: black;
+    background: #4c9e75;
+    color: white;
     border-radius: 50%;
 
     display: flex;
@@ -49,38 +52,57 @@
 }
 
 .data-sustainable {
-    width: calc(100% - 100px);
-    height: 100%;
+    width: calc(100% - 20px);
+    height: calc(100% - 40px);
+
+    margin-top: 10px;
+    padding: 10px;
 }
 
-#SustainableHeading{ 
-    color: rgb(234, 234, 234);
+#SustainableHeading{
+    transition-duration: 0.3s;
 
-    width: calc(100vw - 60px);
+    color: rgb(130, 130, 130);
+
+    width: calc(100vw - 100px);
     max-width: 1000px;
     margin: auto;
     margin-top: 40px;
 
-    text-align: center;
-
+    border-color: #4c9e75;
     border-top-style: solid;
+    border-width: 5px;
+
     padding-top: 20px;
+
+    padding: 20px;
+
+    font-size: 20px;
 }
 
 #SustainableEnding {
-    color: rgb(234, 234, 234);
-
-    width: calc(100vw - 60px);
+    transition-duration: 0.3s;
+    
+    width: calc(100vw - 100px);
     max-width: 1000px;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 40px;
+    
+    
+    border-bottom-style: solid;
+    border-color: #4c9e75;
+    border-width: 5px;
 
-    text-align: center;
+    color: rgb(130, 130, 130);
+
+    font-size: 20px;
+    padding: 20px;
 }
 
+
 #highlighted-text {
-    color: rgb(255, 255, 255);
+    color: gold;
     font-size: 1.3em;
 }
 
@@ -94,9 +116,16 @@
     }
 
     .data-sustainable {
-        width: calc(100% - 60px);
         height: 100%;
 
         font-size: 13px;
+    }
+
+    #SustainableHeading{
+        font-size: 17px;
+    }
+    
+    #SustainableEnding {
+        font-size: 17px;
     }
 }

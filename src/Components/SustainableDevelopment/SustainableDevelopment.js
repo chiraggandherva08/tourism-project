@@ -1,12 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import guidelines from "./guidelines";
 import './Style.css';
 
-const SustainableDevelopmentGuidelines = ({sno, data}) => {
+const SustainableDevelopmentGuidelines = ({ data, sno }) => {
+
+
     return (
         <li className="SustainableDevelopmentGuidelines">
             <div className="sno-sustainable">
-                {sno}
+                {sno + 1}
             </div>
             <div className="data-sustainable">
                 {data}
@@ -20,10 +22,10 @@ const SustainableDevelopment = () => {
         <React.Fragment>
             <h2 id="SustainableHeading">
                 <span id="highlighted-text">
-                    Sustainable development guidelines 
-                </span> 
+                    Sustainable development guidelines
+                </span>
                 <br />
-                 for tourism in India can help ensure that tourism activities in the country are environmentally, socially, and economically sustainable. Here are some key guidelines that can be followed:
+                for tourism in India can help ensure that tourism activities in the country are environmentally, socially, and economically sustainable. Here are some key guidelines that can be followed:
             </h2>
 
             <ul className="SustainableDevelopment" id="SustainableDevelopment">{

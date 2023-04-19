@@ -1,18 +1,24 @@
 .map-section {
     color: black;
-    padding: 20px;
-
-    margin: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    height: 500px;
+    width: 100vw;
+    margin: auto;
 }
 
 .user-current-location {
-    width: 400px;
-    height: 350px;
+    width: calc(100% - 40px);
 
-    padding: 10px;
-    border-radius: 10px;
+    max-width: 500px;
+    height: 400px;
+
+    transition-duration: 0.3;
+}
+
+.user-current-location:hover {
+    opacity: 1;
 }

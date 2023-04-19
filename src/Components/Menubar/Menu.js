@@ -7,9 +7,26 @@ const Menu = () => {
         menubar.style.transform = "translateX(-50%) translateY(0%)";
     }, 200);
 
+    const displayActive = () => {
+        const menuitems = document.querySelectorAll(".items");
+
+        menuitems.forEach((element, index) => {
+            menuitems[index].addEventListener("click", () => {
+                menuitems.forEach((element, index_) => {
+                    if (index != index_) {
+                        menuitems[index_].style.backgroundColor = "white";
+                        menuitems[index_].style.color = "gray";
+                    }
+                });
+                menuitems[index].style.backgroundColor = "rgb(69, 111, 246)";
+                menuitems[index].style.color = "white";
+            })
+        });
+    }
+
     let isToggled = false;
     const toggleMenu = () => {
-        if (window.innerWidth <= 700) {
+        if (window.innerWidth <= 830) {
             const menu = document.querySelector("#menuitems");
             if (!isToggled) {
                 menu.style.transform = "translateY(0%)";
@@ -19,8 +36,11 @@ const Menu = () => {
                 isToggled = false;
             }
         }
+        displayActive();
     }
-    
+
+
+
     const toggleTranslate = () => {
         const translate = document.querySelector(".translator");
         translate.classList.toggle("translator-toggle");
@@ -36,8 +56,8 @@ const Menu = () => {
 
             <ul className="menubar">
                 <li id="logo">
-                        <img id="logo-png" src="./Assets/logo.png" />
-                        <a href="#" className="menu-link">Travel Today</a>
+                    <img id="logo-png" src="./Assets/logo.png" />
+                    <a href="#" className="menu-link">Travel Today</a>
                 </li>
                 <li id="menuitems">
                     <ul id="menuitems-list">
@@ -45,7 +65,7 @@ const Menu = () => {
                             <a className="menu-link" href="#Medium">Medium</a>
                         </li>
                         <li className="items" onClick={() => toggleMenu()}>
-                            <a className="menu-link" href="#Hotels">Hotels</a> 
+                            <a className="menu-link" href="#Hotels">Hotels</a>
                         </li>
                         <li className="items" onClick={() => toggleMenu()}>
                             <a className="menu-link" href="#Restaurants">Restaurants</a>
@@ -54,7 +74,7 @@ const Menu = () => {
                             <a className="menu-link" href="#Translate">Translate</a>
                         </li>
                         <li className="items" >
-                            <a className="menu-link" href="#SustainableDevelopment">SustainableDevelopment</a>
+                            <a className="menu-link" href="#SustainableDevelopment">Guidelines</a>
                         </li>
                     </ul>
                 </li>
