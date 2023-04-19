@@ -163,7 +163,7 @@
     #menuitems {
         position: fixed;
         top: 100px;
-        z-index: 1;
+        z-index: 2;
 
         margin-right: 0px;
 

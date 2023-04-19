@@ -10,6 +10,9 @@
     list-style-type: none;
 
     color: rgb(40, 40, 40);
+    background: #caffcd;
+    border-radius: 10px;
+    padding: 20px 0px;
 }
 
 .SustainableDevelopmentGuidelines {
@@ -86,7 +89,6 @@
     width: calc(100vw - 100px);
     max-width: 1000px;
     margin: auto;
-    margin-top: 40px;
     margin-bottom: 40px;
     
     
