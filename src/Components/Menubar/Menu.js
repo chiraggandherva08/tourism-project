@@ -4,7 +4,7 @@ import './Style.css';
 const Menu = () => {
     setTimeout(() => {
         const menubar = document.querySelector(".menubar");
-        menubar.style.transform = "translateX(-50%) translateY(0%)";
+        menubar.style.transform = "translateY(0%)";
     }, 200);
 
     const displayActive = () => {
@@ -57,7 +57,7 @@ const Menu = () => {
             <ul className="menubar">
                 <li id="logo">
                     <img id="logo-png" src="./Assets/logo.png" />
-                    <a href="#" className="menu-link">Travel Today</a>
+                    <a href="#" className="menu-link">Hack Elite</a>
                 </li>
                 <li id="menuitems">
                     <ul id="menuitems-list">

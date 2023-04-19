@@ -9,15 +9,13 @@
 
     width: 100vw;
     height: 80px;
-
-    padding: 0px 5px;
     
     font-family: 'Poppins', sans-serif;
     
     position: fixed;
     top: 0px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%);
+    left: 0px;
+    transform: translateY(-120%);
 
     font-weight: 400;
     font-size: 15px;
@@ -30,7 +28,6 @@
     color: gray;
 
     transition-duration: 0.3s;
-
     z-index: 1;
 }
 
@@ -41,8 +38,8 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 130px;
-    height: 40px;
+    width: 150px;
+    height: 100%;
     border-radius: 20px;
 
     cursor: pointer;
@@ -55,7 +52,7 @@
 }
 
 #logo-png {
-    width: 25px;
+    width: 60px;
 }
 
 #menuitems {
@@ -157,7 +154,6 @@
 
     #logo {
         margin-left: 0px;
-        margin-top: 20px;
     }
 
     #menuitems {
@@ -215,7 +211,7 @@
         display: flex;
 
         position: fixed;
-        top: 20px;
+        top: 25px;
         right: 40px;
 
         z-index: 2;

@@ -62,7 +62,7 @@
     padding: 10px;
 }
 
-#SustainableHeading{
+#SustainableHeading {
     transition-duration: 0.3s;
 
     color: rgb(130, 130, 130);
@@ -85,13 +85,13 @@
 
 #SustainableEnding {
     transition-duration: 0.3s;
-    
+
     width: calc(100vw - 100px);
     max-width: 1000px;
     margin: auto;
     margin-bottom: 40px;
-    
-    
+
+
     border-bottom-style: solid;
     border-color: #4c9e75;
     border-width: 5px;
@@ -102,10 +102,11 @@
     padding: 20px;
 }
 
-
 #highlighted-text {
     color: gold;
     font-size: 1.3em;
+
+    text-decoration: underline;
 }
 
 @media (max-width: 700px) {
@@ -123,10 +124,10 @@
         font-size: 13px;
     }
 
-    #SustainableHeading{
+    #SustainableHeading {
         font-size: 17px;
     }
-    
+
     #SustainableEnding {
         font-size: 17px;
     }

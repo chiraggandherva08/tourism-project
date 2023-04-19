@@ -1,44 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
+#weather-heading {
+    font-size: 20px;
+    color: rgb(33, 33, 33);
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    width: calc(100vw - 100px);
+
+    font-size: 16px;
+    margin-left: 30px;
+
+    color: rgb(29, 51, 177);
+}
+
+.all-weather {
+    width: calc(100vw - 30px);
+    margin: auto;
+
+    max-width: 1000px;
+
+    padding: 20px 0px;
+}
+
+.weather-for-seven-days {
+    width: calc(100%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    align-items: center;
+    justify-content: center;
+}
+
 .main-body {
-    width: 600px;
-    height: 700px;
+    width: 200px;
+    height: 200px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
-    background: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-color: white;
 
     overflow: hidden;
-    margin: auto;
 
     border-top-style: solid;
-    border-color: rgba(255, 187, 0, 0.737);
-    border-radius: 5px;
+    border-color: white;
+    border-radius: 4px;
+
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-body:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-section {
-    width: 90%;
+    width: 400px;
     height: 40px;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .input-section input {
-    width: 50%;
-    height: 100%;
+    width: 200px;
+    height: 40px;
 
     border-radius: 5px;
 
     outline: 0;
     border-style: none;
-
-    padding: 0px 20px;
-
+    
+    padding: 0px 10px;
+    
     background: rgba(255, 187, 0, 0.737);
     color: white;
 
@@ -49,13 +91,26 @@
     text-align: center;
 }
 
+#get-weather {
+    width: 100px;
+    height: 40px;
+
+    background: rgb(18, 43, 107);
+    color: white;
+
+    outline: 0;
+    border-style: none;
+
+    border-radius: 5px;
+}
+
 .input-section input:focus {
     background: rgb(7, 44, 108);
 }
 
 .image {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 .image img {
@@ -68,77 +123,28 @@
 }
 
 .disc { 
-    height: 40px;
-    width: 50%;
+    height: 30px;
+    width: 80%;
 
-    font-size: 20px;
+    font-size: 13px;
 
     text-align: center;
 
     cursor: default;
 
-    color: rgb(255, 255, 255);
+    color: rgb(59, 59, 59);
 
     border-style: solid;
     border-width: 0.5px;
     border-color: rgba(255, 255, 255, 0.1);
 
-    background: rgba(0, 0, 0, 0.1);
-
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.city-name {
-    height: 50px;
-    width: 50%;
-    
-    text-align: center;
-    
-    font-size: 1.2em;
-
-    color: rgb(255, 255, 255);
-
-    cursor: default;
-
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: rgba(255, 255, 255, 0.1);
-
-    background: rgba(0, 0, 0, 0.1);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.timing {
-    width: 60%;
-    height: 100px;
-    
-    font-size: 1.2em;
-
-    color: rgb(255, 255, 255);
-
-    cursor: default;
-
-    background: rgba(0, 0, 0, 0.1);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .temp {
-    width: 80%;
+    width: 90%;
     height: 40px;
     
     text-align: center;
@@ -146,7 +152,7 @@
     display: flex;
     justify-content: space-between;
 
-    background: rgba(255, 255, 255, 0);
+    color: rgb(59, 59, 59);
 }
 
 .max, .min, .current {
@@ -162,8 +168,6 @@
 
     cursor: default;
 
-    color: rgb(255, 255, 255);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,65 +175,36 @@
     border-style: solid;
     border-width: 0.5px;
     border-color: rgba(255, 254, 254, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+
+    font-size: 13px;
 }
 
-.additional {
-    width: 80%;
-    height: 50px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.atm-pre, .humidity {
-    width: 40%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 5px;
-
-    background: rgba(0, 0, 0, 0.1);
-
-    cursor: default;
-
-    color: rgb(255, 255, 255);
-
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: rgba(255, 255, 255, 0.1);
-
-    text-align: center;
-}
-
-@media (max-width: 500px) {
-
-    .main-body {
-        background: #00000000;
-
-        border-style: none;
-    
-        overflow: hidden;
-
-        box-shadow: 0px 0px 0px;
-        width: 100vw;
-    }
-
-    .frame {
+@media (max-width: 450px) {
+    .input-section {
+        flex-direction: column;
+        align-items: center;
+        height: 100px;
 
         width: 100%;
-        height: 100%;
+        padding: 0px;
+    }
+
+    .main-body {
+        width: 150px;
+        height: 150px;
+    }
+
+    .disc {
+        font-size: 10px;
+    }
     
-        position: fixed;
-        top: 50%;
-        left: 50%;
-    
-        transform: translateX(-50%) translateY(-25%);
-        
-        overflow: hidden;
+    .max, .min, .current {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .main-body {
+        width: 100%;
     }
 }

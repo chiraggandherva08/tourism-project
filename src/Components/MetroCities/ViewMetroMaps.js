@@ -6,7 +6,7 @@ const ViewMetroMaps = () => {
         const previewMap = document.querySelector(".preview-tab");
         previewMap.classList.add("toggle-preview-tab");
     }
-    
+
     return (
         <React.Fragment>
             <button id="preview-map-btn" onClick={() => {togglePreview()}}>
