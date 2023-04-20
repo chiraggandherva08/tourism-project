@@ -55,30 +55,21 @@ const Menu = () => {
             <ul className="menubar">
                 <li id="logo">
                     <img id="logo-png" src="./Assets/logo.png" />
-                    <a href="#" className="menu-link">Hack Elite</a>
+                    <a href="#" className="menu-link">Venture</a>
                 </li>
                 <li id="menuitems">
                     <ul id="menuitems-list">
                         <li className="items" onClick={() => toggleMenu()}>
-                            <a className="menu-link" href="#Medium">Home</a>
+                            <a className="menu-link" href="#Medium">Planning</a>
                         </li>
                         <li className="items" onClick={() => toggleMenu()}>
-                            <a className="menu-link" href="#Medium">Medium</a>
+                            <a className="menu-link" href="#Medium">Travelling</a>
                         </li>
                         <li className="items" onClick={() => toggleMenu()}>
-                            <a className="menu-link" href="#Hotels">Hotels</a>
-                        </li>
-                        <li className="items" onClick={() => toggleMenu()}>
-                            <a className="menu-link" href="#Restaurants">Restaurants</a>
+                            <a className="menu-link" href="#Hotels">Exploration</a>
                         </li>
                         <li className="items" onClick={() => toggleTranslate()}>
                             <a className="menu-link" href="#Translate">Translate</a>
-                        </li>
-                        <li className="items" >
-                            <a className="menu-link" href="#SustainableDevelopment">Guidelines</a>
-                        </li>
-                        <li className="items" >
-                            <a className="menu-link" href="#weather">Weather</a>
                         </li>
                     </ul>
                 </li>

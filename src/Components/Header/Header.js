@@ -45,15 +45,11 @@ const Header = () => {
 
 	return (
 		<React.Fragment>
-			<div className="header">
-				<div className="hero-disc">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolorem
-				</div>
-			</div>
+			<div className="user_locations" id="locations">
 
-			<div className="user_locations">
 				<button id="from-location" onClick={() => { getUserCurrentLocation() }}>grant location access</button>
-				<div className="inout-for-destination">
+				
+				<div className="input-for-destination">
 
 					<input onChange={(event) => { setLocation(event) }} id="to-location" placeholder="Your Destination" />
 

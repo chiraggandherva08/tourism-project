@@ -1,7 +1,9 @@
 .SustainableDevelopment {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 
     width: calc(100vw - 60px);
     max-width: 1000px;
@@ -10,13 +12,14 @@
     list-style-type: none;
 
     color: rgb(40, 40, 40);
-    background: #caffcd;
+    background: rgb(214, 255, 216);
     border-radius: 10px;
     padding: 20px 0px;
+
 }
 
 .SustainableDevelopmentGuidelines {
-    width: calc(100% - 100px);
+    width: 200px;
 
     padding: 10px;
     margin-top: 10px;
@@ -30,11 +33,18 @@
 
     border-radius: 5px;
 
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
 
     border-style: solid;
     border-width: 1px;
-    border-color: transparent;
+    border-color: white;
+
+    background: #bdffc0;
+
+    box-shadow: inset 10px 10px 10px #c6ffc8, 
+                inset -10px -10px 10px #afffb3,
+                -5px -5px 10px #b0ffb5,
+                5px 5px 10px #dcffde;
 }
 
 .SustainableDevelopmentGuidelines:hover {
@@ -55,8 +65,8 @@
 }
 
 .data-sustainable {
-    width: calc(100% - 20px);
-    height: calc(100% - 40px);
+    width: calc(100% - 10px);
+    height: calc(100% - 30px);
 
     margin-top: 10px;
     padding: 10px;
@@ -111,11 +121,11 @@
 
 @media (max-width: 700px) {
     .SustainableDevelopment {
-        width: calc(100vw - 0px);
+        width: calc(100vw - 20px);
     }
 
     .SustainableDevelopmentGuidelines {
-        width: calc(100% - 60px);
+        width: 100px;
     }
 
     .data-sustainable {
