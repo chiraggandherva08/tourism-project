@@ -3,8 +3,6 @@ import guidelines from "./guidelines";
 import './Style.css';
 
 const SustainableDevelopmentGuidelines = ({ data, sno }) => {
-
-
     return (
         <li className="SustainableDevelopmentGuidelines">
             <div className="sno-sustainable">

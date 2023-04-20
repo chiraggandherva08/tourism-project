@@ -1,43 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import './Style.css';
+import allCities from "./citiesNames";
 
 const Header = () => {
+	const [citiesList, setFilteredCitiesList] = useState([...allCities]);
 
-    const getUserCurrentLocation = () => {
-        const getLocation = (position) => {
-            const coordinates = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-            console.log(coordinates);
-            return coordinates;
-        };
+	const getUserCurrentLocation = () => {
+		const getLocation = (position) => {
+			const coordinates = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
+			return coordinates;
+		};
 
-        const throwError = (error) => {
-            return error;
-        };
-        navigator.geolocation.getCurrentPosition(getLocation, throwError);
-    }
+		const throwError = (error) => {
+			return error;
+		};
+		navigator.geolocation.getCurrentPosition(getLocation, throwError);
+	}
 
-    const setLocation = (event) => {
-        const endLoc = event.target.value;
-        document.querySelector(".input-section input").value = endLoc;
-    }
+	
+	const setLocation = (event) => {
+		const destination = event.target.value.toLowerCase();
+		filterAllCities(destination);
+	}
 
-    return (
-        <React.Fragment>
-            <div className="header">
-                <div className="hero-disc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolorem 
-                </div>
-            </div>
+	const filterAllCities = (destination) => {
+		if (destination == "") {
+			return [...allCities];
+		}
 
-            <div className="user_locations">
-                <button id="from-location" onClick={() => { getUserCurrentLocation() }}>grant location access</button>
-                <input onChange={(event) => {setLocation(event)}} id="to-location" placeholder="Your Destination"/>
-            </div>
-        </React.Fragment>
-    );
+		const newList = [];
+
+		citiesList.filter((city) => {
+			if (city.includes(destination) && !newList.includes(city)) {
+				newList.push(city);
+			}
+		})
+		console.log(newList);
+		setFilteredCitiesList([...newList]);
+		return newList;
+	}
+
+	return (
+		<React.Fragment>
+			<div className="header">
+				<div className="hero-disc">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolorem
+				</div>
+			</div>
+
+			<div className="user_locations">
+				<button id="from-location" onClick={() => { getUserCurrentLocation() }}>grant location access</button>
+				<div className="inout-for-destination">
+
+					<input onChange={(event) => { setLocation(event) }} id="to-location" placeholder="Your Destination" />
+
+					<ul className="city-suggestions">
+						{
+							citiesList.map((value, indx) => {
+								return (
+									<li className="cities-sugg" key={indx}>
+										{value}
+									</li>
+								);
+							})
+						}
+					</ul>
+
+				</div>
+			</div>
+		</React.Fragment>
+	);
 }
 
 export default Header;

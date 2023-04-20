@@ -16,7 +16,7 @@ function App() {
       <Header/>
       <Preview/>
       <Translator/> 
-      <Map/>
+      {/* <Map/> */}
       <SustainableDevelopment/>
       <Reviews/>
       <Weather/>

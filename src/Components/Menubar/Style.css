@@ -9,7 +9,7 @@
 
     width: 100vw;
     height: 80px;
-    
+
     font-family: 'Poppins', sans-serif;
     
     position: fixed;
@@ -24,11 +24,13 @@
 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
-    background: rgb(255, 255, 255);
     color: gray;
 
     transition-duration: 0.3s;
     z-index: 1;
+
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 #logo {
@@ -65,7 +67,7 @@
 
     margin-right: 20px;
 
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     font-size: 13px;
 }
 
@@ -93,14 +95,16 @@
 }
 
 .items {
-    height: 90%;
+    height: 80%;
     display: flex;
     align-items: center;
 
-    padding: 0px 20px;
+    padding: 0px 10px;
 
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+
+    background: white;
 }
 
 .items:nth-child(1) {

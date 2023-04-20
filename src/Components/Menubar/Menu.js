@@ -39,8 +39,6 @@ const Menu = () => {
         displayActive();
     }
 
-
-
     const toggleTranslate = () => {
         const translate = document.querySelector(".translator");
         translate.classList.toggle("translator-toggle");
@@ -62,6 +60,9 @@ const Menu = () => {
                 <li id="menuitems">
                     <ul id="menuitems-list">
                         <li className="items" onClick={() => toggleMenu()}>
+                            <a className="menu-link" href="#Medium">Home</a>
+                        </li>
+                        <li className="items" onClick={() => toggleMenu()}>
                             <a className="menu-link" href="#Medium">Medium</a>
                         </li>
                         <li className="items" onClick={() => toggleMenu()}>
@@ -75,6 +76,9 @@ const Menu = () => {
                         </li>
                         <li className="items" >
                             <a className="menu-link" href="#SustainableDevelopment">Guidelines</a>
+                        </li>
+                        <li className="items" >
+                            <a className="menu-link" href="#weather">Weather</a>
                         </li>
                     </ul>
                 </li>

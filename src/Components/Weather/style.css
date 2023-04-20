@@ -1,27 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
 #weather-heading {
-    font-size: 20px;
     color: rgb(33, 33, 33);
 
     margin-top: 10px;
     margin-bottom: 10px;
 
-    width: calc(100vw - 100px);
+    width: calc(100% - 100px);
 
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 30px;
 
     color: rgb(29, 51, 177);
+}
+
+#error-city {
+    font-size: 2em;
+    color: red;
+
+    text-align: center;
+    text-decoration: line-through;
 }
 
 .all-weather {
     width: calc(100vw - 30px);
     margin: auto;
 
-    max-width: 1000px;
+    max-width: 1200px;
 
     padding: 20px 0px;
+}
+
+#date-sec {
+    width: calc(100% - 40px);
+    font-size: 12px;
+
+    border-top-style: solid;
+    border-top-color: rgba(0, 0, 0, 0.358);
+    border-top-width: 0.5px;
+
+    padding-top: 10px;
 }
 
 .weather-for-seven-days {
@@ -36,7 +54,7 @@
 
 .main-body {
     width: 200px;
-    height: 200px;
+    height: 220px;
 
     display: flex;
     flex-direction: column;
@@ -53,10 +71,13 @@
     border-radius: 4px;
 
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+    transition-duration: 0.2s;
 }
 
 .main-body:hover {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px rgba(0, 0, 255, 0.2);
+    border-color: rgb(192, 192, 255);
 }
 
 .input-section {
@@ -102,6 +123,7 @@
     border-style: none;
 
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .input-section input:focus {
