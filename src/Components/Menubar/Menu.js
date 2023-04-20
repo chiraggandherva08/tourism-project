@@ -7,6 +7,17 @@ const Menu = () => {
         menubar.style.transform = "translateY(0%)";
     }, 200);
 
+    window.addEventListener("scroll", () => {
+        const navBar = document.querySelector(".nav-bar");
+
+        if (window.scrollY >= 100 && window.innerWidth > 550) {
+            navBar.classList.add("fixed-nav-bar");
+        }
+        else {
+            navBar.classList.remove("fixed-nav-bar");
+        }
+    })
+
     const displayActive = () => {
         const menuitems = document.querySelectorAll(".items");
 
@@ -41,7 +52,7 @@ const Menu = () => {
 
     const toggleTranslate = () => {
         const translate = document.querySelector(".translator");
-        translate.classList.toggle("translator-toggle");
+        translate.classList.add("translator-toggle");
         toggleMenu();
     }
 

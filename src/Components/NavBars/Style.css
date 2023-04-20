@@ -6,9 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     list-style-type: none;
-
+    
     color: rgb(119, 119, 119);
     
     height:  50px;
@@ -17,9 +17,27 @@
     padding: 0px 20px;
     margin: auto;
     margin-top: 100px;
-
+    
     border-bottom-style: solid;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.fixed-nav-bar {
+    margin-top: 0px;
+    
+    position: fixed;
+    top: 90px;
+    left: 50%;
+    
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    
+    border-radius: 10px;
+    
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+    
+    z-index: 1;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
 }
 
 .planning-menu-item {
@@ -34,6 +52,8 @@
     cursor: pointer;
 
     color: inherit;
+
+    transition-duration: 0.2s;
 }
 
 .planning-menu-item a {
@@ -49,21 +69,24 @@
 }
 
 .planning-menu-item:hover {
-    background: #ededed;
+    color: white;
+    background: rgb(79, 110, 238);
 }
 
 @media (max-width: 550px) {
     .nav-bar {
         width: calc(100vw - 100px);
         height: auto;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: flex-start;
-    }    
+        justify-content: center;
+        gap: 20px;
+
+        padding-bottom: 20px;
+    }
 
     .planning-menu-item {
         height: 40px;
-        margin-top: 10px;
-        margin-bottom: 10px;
 
         background: #efefef;
     }

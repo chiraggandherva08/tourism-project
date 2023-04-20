@@ -1,27 +1,28 @@
 import './App.css';
 import Menu from './Components/Menubar/Menu';
-import Header from './Components/Header/Header';
-import SustainableDevelopment from './Components/SustainableDevelopment/SustainableDevelopment';
-import Reviews from './Components/Reviews/Reviews';
-import Weather from './Components/Weather/weather';
+import Header from './Components/PlanningSection/Header/Header';
+import SustainableDevelopment from './Components/PlanningSection/SustainableDevelopment/SustainableDevelopment';
+import Reviews from './Components/PlanningSection/Reviews/Reviews';
+import Weather from './Components/PlanningSection/Weather/weather';
 import Planning from './Components/NavBars/Planning';
-import Translator from './Components/Translator/Translator'
+import Translator from './Components/Translator/Translator';
+import TransportData from './Components/PlanningSection/TransportationData/TransportData';
 
 function App() {
   return (
     <div className="App">
-      
-      <Menu/>
-      <Translator/>
+
+      <Menu />
+      <Translator />
 
       <div className='planning'>
-        <Planning/>
-        <Header/>
-        <SustainableDevelopment/>
-        <Reviews/>
-        <Weather/>
+        <Planning />
+        <Header />
+        <SustainableDevelopment />
+        <Weather />
+        <TransportData />
+        <Reviews />
       </div>
-
 
     </div>
   );

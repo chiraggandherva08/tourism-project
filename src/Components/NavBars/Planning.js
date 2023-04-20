@@ -15,13 +15,13 @@ const Planning = () => {
                 </a>
             </li>
             <li className="planning-menu-item">
-                <a href="#">
-                Reviews
+                <a href="#weather">
+                Weather
                 </a>
             </li>
             <li className="planning-menu-item">
-                <a href="#weather">
-                Weather
+                <a href="#reviews">
+                Reviews
                 </a>
             </li>
         </ul>

@@ -11,7 +11,7 @@
     height: 80px;
 
     font-family: 'Poppins', sans-serif;
-    
+
     position: fixed;
     top: 0px;
     left: 0px;
@@ -150,7 +150,7 @@
     background: black;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 750px) {
     .menubar {
         flex-direction: column;
         justify-content: flex-start;
