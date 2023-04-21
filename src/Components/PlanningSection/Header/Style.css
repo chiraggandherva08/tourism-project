@@ -40,7 +40,7 @@
     border-radius: 5px;
 }
 
-#from-location:focus,  #to-location:focus {
+#from-location:focus, #to-location:focus {
     border-style: solid;
     border-color: rgb(132, 132, 255);
 }
@@ -77,7 +77,7 @@
 
     list-style-type: none;
 
-    overflow: scroll;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;

@@ -16,8 +16,10 @@ function App() {
       <Translator />
 
       <div className='planning'>
-        <Planning />
-        <Header />
+        <div className="header-bg">
+          <Planning />
+          <Header />
+        </div>
         <SustainableDevelopment />
         <Weather />
         <TransportData />

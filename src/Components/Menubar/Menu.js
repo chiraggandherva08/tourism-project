@@ -10,7 +10,7 @@ const Menu = () => {
     window.addEventListener("scroll", () => {
         const navBar = document.querySelector(".nav-bar");
 
-        if (window.scrollY >= 100 && window.innerWidth > 550) {
+        if (window.scrollY >= 100 && window.innerWidth > 600) {
             navBar.classList.add("fixed-nav-bar");
         }
         else {

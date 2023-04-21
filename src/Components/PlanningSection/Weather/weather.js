@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./style.css";
 import allCities from "./citiesNames";
+import { toggleWeather } from "../../NavBars/Planning";
 
 const DayWeather = ({ weatherData, main, date }) => {
 
     return (
         <div className="main-body">
             <div className="image"><img src={`./weather-assets/${main.toLowerCase()}.svg`} /></div>
-            
-            <div className="disc">{weatherData[0]}F</div>
-            
+
+            <div className="disc">{main}</div>
+
             <div className="temp">
-                <div className="max">Max <br />{weatherData[0]}f</div>
-                <div className="min">Min <br />{weatherData[1]}f</div>
-                <div className="current">{weatherData[2]}f</div>
+                <div className="max">Max <br />{Math.round(weatherData[0] * 10 + 0.1) / 10}C</div>
+                <div className="min">Min <br />{Math.round(weatherData[1] * 10 + 0.1) / 10}C</div>
+                <div className="current">{Math.round(weatherData[2] * 10 + 0.1) / 10}C</div>
             </div>
 
             <div id="date-sec">
@@ -29,7 +30,7 @@ function Weather() {
     const [weatherData, setData] = useState([]);
 
     function fetchData(city) {
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?cnt=7&q=${city}&appid=c8bf51e89e3187a5bb1c6bf76ff14902`).then(response => response.json()).then(
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?cnt=7&units=metric&q=${city}&appid=c8bf51e89e3187a5bb1c6bf76ff14902`).then(response => response.json()).then(
             (response) => {
                 setData(response.list);
                 setCityName(response.city.name);
@@ -65,6 +66,10 @@ function Weather() {
     return (
         <React.Fragment>
             <div className="all-weather" id="weather">
+                <div className="weather-close-tab">
+                    <img src="./Assets/close.svg" onClick={() => {toggleWeather()}} />
+                </div>
+
                 <h2 id="weather-heading">{cityName} weather data for a week:</h2>
 
                 <div className="input-section">
