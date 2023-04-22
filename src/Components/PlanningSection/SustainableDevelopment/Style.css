@@ -15,7 +15,23 @@
     background: rgb(214, 255, 216);
     border-radius: 10px;
     padding: 20px 0px;
+}
 
+#video-sus {
+    width: 100%;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sustainable-video {
+    width: 100%;
+    height: 200px;
+    max-width: 400px;
+    
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .SustainableDevelopmentGuidelines {

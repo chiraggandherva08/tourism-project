@@ -1,0 +1,76 @@
+import React from "react";
+import './Style.css';
+import chatGPT_Response from "./AIPlanner";
+
+const TripPlanner = () => {
+    const createUserQuery = () => {
+        const startingLocation = document.querySelector("#starting-point").value.trim();
+        const endingLocation = document.querySelector("#ending-point").value.trim();
+        const mode = document.querySelector("#mode-of-transport").value.trim().toLowerCase();
+        let noOfDays = document.querySelector("#number-of-days").value.trim();
+
+        if (noOfDays*0 != 0) {
+            console.log("not a number");
+            return;
+        }
+
+        if (noOfDays == 0 || startingLocation == "" || endingLocation == "") {
+            return;
+        } else {
+            const animation = document.querySelector(".loading-trip");
+            const text = document.querySelector(".creating-trip");
+            animation.classList.add("display-flex");
+            text.classList.add("display-flex");
+    
+            const outputWindow = document.querySelector(".planned-trip");
+            outputWindow.style.height = '0px';
+            outputWindow.style.opacity = '0';
+
+            const query = `plan a ${noOfDays} day trip from ${startingLocation} to ${endingLocation} via ${mode}.`;
+            chatGPT_Response(query);
+        }
+    };
+
+    return (
+        <React.Fragment>
+            <div className="trip-planner">
+                <div className="input-fields-for-planner">
+                    <input id="starting-point" type="text" placeholder="Starting point..."/>
+                    <input id="ending-point" type="text" placeholder="Ending point..."/>
+                    <input id="number-of-days" type="text" placeholder="Number of days.."/>
+
+                    <select id="mode-of-transport">
+                        <option htmlFor="mode-of-transport" value="air" >By air</option>
+                        <option htmlFor="mode-of-transport" value="road">By road</option>
+                        <option htmlFor="mode-of-transport" value="train">By train</option>
+                    </select>
+
+                    <button id="generate-trip-btn" onClick={() => {createUserQuery()}}>Generate?</button>
+                </div>
+
+                <div className="planning-img">
+                    <img src="./Assets/travel.svg" />
+                </div>
+            </div>
+
+            <div className="planned-trip">
+            </div>
+
+            <div className="loading-trip">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+                <div id="bar4"></div>
+                <div id="bar5"></div>
+            </div>
+
+            <div className="creating-trip">
+                Keep calm, <br />
+                We are preparing your itinerary.
+            </div>
+
+        </React.Fragment>
+    );
+}
+
+export default TripPlanner;

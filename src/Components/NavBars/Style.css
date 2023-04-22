@@ -12,9 +12,10 @@
 
     padding: 0px 10px;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 60px;
 
     border-bottom-style: solid;
+    border-bottom-color: rgb(171, 171, 171);
 }
 
 .fixed-nav-bar {
@@ -32,7 +33,7 @@
     transform: translateX(-50%);
     
     z-index: 1;
-    border-bottom-color: rgba(0, 0, 0, 0.3);
+    border-bottom-color: rgba(84, 84, 84, 0.3);
 }
 
 .planning-menu-item {
@@ -65,7 +66,7 @@
 
 .planning-menu-item:hover {
     color: white;
-    background: rgb(79, 110, 238);
+    background: rgb(33, 12, 61);
 }
 
 @media (max-width: 600px) {
