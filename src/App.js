@@ -1,5 +1,6 @@
 import './App.css';
 import Menu from './Components/Menubar/Menu';
+import TripPlanner from './Components/AIPlannedTrip/PlanTrip';
 import Header from './Components/PlanningSection/Header/Header';
 import SustainableDevelopment from './Components/PlanningSection/SustainableDevelopment/SustainableDevelopment';
 import Reviews from './Components/PlanningSection/Reviews/Reviews';
@@ -14,10 +15,11 @@ function App() {
 
       <Menu />
       <Translator />
-
+      
       <div className='planning'>
         <div className="header-bg">
           <Planning />
+          <TripPlanner/>
           <Header />
         </div>
         <SustainableDevelopment />

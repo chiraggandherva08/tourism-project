@@ -5,7 +5,7 @@
     
     list-style-type: none;
     
-    color: rgb(119, 119, 119);
+    color: rgb(94, 94, 94);
 
     height:  50px;
     width: 550px;
@@ -21,11 +21,10 @@
     margin-top: 0px;
     
     position: fixed;
-    top: 90px;
+    top: 60px;
     left: 50%;
     
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255);
     
     border-radius: 10px;
     

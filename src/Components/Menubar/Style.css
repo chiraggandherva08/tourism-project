@@ -3,34 +3,38 @@
 .menubar {
     list-style-type: none;
 
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     width: 100vw;
-    height: 80px;
+    height: 50px;
 
     font-family: 'Poppins', sans-serif;
-
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    transform: translateY(-120%);
 
     font-weight: 400;
     font-size: 15px;
 
     transition-duration: 0.5s;
 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
     color: gray;
 
     transition-duration: 0.3s;
     z-index: 1;
 
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
+
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: gray;
+    border-width: 0.5px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 #logo {
@@ -54,7 +58,7 @@
 }
 
 #logo-png {
-    width: 60px;
+    width: 40px;
 }
 
 #menuitems {
@@ -95,7 +99,7 @@
 }
 
 .items {
-    height: 80%;
+    height: 100%;
     display: flex;
     align-items: center;
 
@@ -105,11 +109,6 @@
     border-bottom-left-radius: 5px;
 
     background: white;
-}
-
-.items:nth-child(1) {
-    background: rgb(69, 111, 246);
-    color: white;
 }
 
 .items:hover {
@@ -162,7 +161,7 @@
 
     #menuitems {
         position: fixed;
-        top: 100px;
+        top: 60px;
         z-index: 2;
 
         margin-right: 0px;
@@ -215,10 +214,12 @@
         display: flex;
 
         position: fixed;
-        top: 25px;
+        top: 10px;
         right: 40px;
 
         z-index: 2;
+
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .toggleMenu {

@@ -6,8 +6,8 @@
 
     margin: auto;
     margin-top: 40px;
+    margin-bottom: 40px;
 
-    border-top-style: solid;
-    border-top-color: rgb(99, 99, 255);
-    border-top-width: 5px;
+    background: #d9f5ff;
+    border-radius: 20px;
 }

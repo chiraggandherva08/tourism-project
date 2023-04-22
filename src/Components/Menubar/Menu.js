@@ -2,38 +2,17 @@ import React, { useState } from "react";
 import './Style.css';
 
 const Menu = () => {
-    setTimeout(() => {
-        const menubar = document.querySelector(".menubar");
-        menubar.style.transform = "translateY(0%)";
-    }, 200);
 
     window.addEventListener("scroll", () => {
         const navBar = document.querySelector(".nav-bar");
 
-        if (window.scrollY >= 100 && window.innerWidth > 600) {
+        if (window.scrollY >= 400 && window.innerWidth > 600) {
             navBar.classList.add("fixed-nav-bar");
         }
         else {
             navBar.classList.remove("fixed-nav-bar");
         }
     })
-
-    const displayActive = () => {
-        const menuitems = document.querySelectorAll(".items");
-
-        menuitems.forEach((element, index) => {
-            menuitems[index].addEventListener("click", () => {
-                menuitems.forEach((element, index_) => {
-                    if (index != index_) {
-                        menuitems[index_].style.backgroundColor = "white";
-                        menuitems[index_].style.color = "gray";
-                    }
-                });
-                menuitems[index].style.backgroundColor = "rgb(69, 111, 246)";
-                menuitems[index].style.color = "white";
-            })
-        });
-    }
 
     let isToggled = false;
     const toggleMenu = () => {
@@ -47,7 +26,6 @@ const Menu = () => {
                 isToggled = false;
             }
         }
-        displayActive();
     }
 
     const toggleTranslate = () => {
