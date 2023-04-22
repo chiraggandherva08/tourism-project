@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from 'openai';
 
 const chatGPT_Response = (userQuery) => {
     const openai = new OpenAIApi(new Configuration({
-        apiKey: "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"
+//         apiKey: ""
     }))
 
     const userinput = {
