@@ -26,11 +26,6 @@ const Planning = () => {
                 </a>
             </li>
             <li className="planning-menu-item">
-                <a href="#Airplanes">
-                Flights
-                </a>
-            </li>
-            <li className="planning-menu-item">
                 <a href="#reviews">
                 Reviews
                 </a>

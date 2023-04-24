@@ -103,8 +103,10 @@
     bottom: 100px;
     right: 20px;
     
-    height: 300px;
-    width: 300px;
+    height: 10px;
+    width: 10px;
+
+    opacity: 0;
 
     overflow-y: scroll;
 
@@ -112,7 +114,9 @@
 
     list-style-type: none;
 
-    display: none;
+    transition-duration: 0.3s;
+
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -122,6 +126,13 @@
 
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-contacts-toggled {
+    height: 300px;
+    width: 300px;
+
+    opacity: 1;
 }
 
 .emergency-contact {
@@ -146,10 +157,6 @@
 .emergency-contact a {
     color: gray;
     text-decoration: none;
-}
-
-.emergency-contacts-hide {
-    display: flex;
 }
 
 .emergency-contact:hover {

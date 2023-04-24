@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from 'openai';
 
 const chatGPT_Response = (userQuery) => {
     const openai = new OpenAIApi(new Configuration({
-//         apiKey: ""
+        apiKey: "sk-"
     }))
 
     const userinput = {
@@ -15,9 +15,8 @@ const chatGPT_Response = (userQuery) => {
     openai.createChatCompletion(userinput).then((chatGPT_Response_) => {
         const outputWindow = document.querySelector(".planned-trip");
         const response = chatGPT_Response_.data.choices[0].message.content;
-        console.log(response);
 
-        outputWindow.style.height = '400px';
+        outputWindow.style.height = '500px';
         outputWindow.style.opacity = '1';
 
         const animation = document.querySelector(".loading-trip");

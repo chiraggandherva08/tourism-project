@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import './Style.css';
 
-const allEmergencyPhoneNumbers = [ ['women', '1091'], ['police', '100'], ['fire', '101']];
+let location = {};
+
+const getLocation = () => {
+    navigator.geolocation.getCurrentPosition((res) => {
+        location = res.coords;
+    });
+}
+
+getLocation();
+
+const allEmergencyPhoneNumbers = [['women', '1091'], ['police', '100'], ['fire', '101']];
 
 const toggleContacts = () => {
-    document.querySelector(".emergency-contacts").classList.toggle("emergency-contacts-hide");
+    document.querySelector(".emergency-contacts").classList.toggle("emergency-contacts-toggled");
 }
 
 const showAddContacts = (show) => {
@@ -17,22 +27,21 @@ const showAddContacts = (show) => {
 }
 
 const Emergency = () => {
-
     const [emergencyContacts, setEmergencyContacts] = useState([...allEmergencyPhoneNumbers]);
-
     const AddContact = () => {
         return (
             <ul id="add-contact">
-                <input id="user-name" type="text" placeholder="Enter name of the person..."/>
-                <input id="user-phone-no" type="text" placeholder="Enter phone no. of the person..."/>
-                <button id="add-contact-btn" onClick={ () => {AddContactToList()} }>add contact</button>
-                <button id="add-contact-cancel" onClick={() => {showAddContacts(false)}} >cancel</button>
+                <input id="user-name" type="text" placeholder="Enter name of the person..." />
+                <input id="user-phone-no" type="text" placeholder="Enter phone no. of the person..." />
+                <button id="add-contact-btn" onClick={() => { AddContactToList() }}>add contact</button>
+                <button id="add-contact-cancel" onClick={() => { showAddContacts(false) }} >cancel</button>
             </ul>
         );
     }
 
-    const AllContacts = ({name, contact}) => {
-        const message = `it is an emergency message from my side.`;
+    const AllContacts = ({ name, contact }) => {
+        const message = `
+        it is an emergency message from my side , My latitude: ${location.latitude}, longitude: ${location.longitude} https://www.google.com/maps/?q=${location.latitude},${location.longitude} .`;
 
         return (
             <li className="emergency-contact">
@@ -42,7 +51,7 @@ const Emergency = () => {
                 <div className="contact">{contact}</div>
             </li>
         );
-    }
+    };
 
     const AddContactToList = () => {
         const name = document.querySelector("#user-name").value.trim().toLowerCase();
@@ -59,17 +68,17 @@ const Emergency = () => {
     return (
         <div className="emergency">
 
-            <AddContact/>          
-            
+            <AddContact />
+
             <div className="button-for-emergency">
-                <img src="./Assets/emergency.svg" onClick={() => {toggleContacts()}}/>
-                <img src="./Assets/add-contact.svg" onClick={() => {showAddContacts(true)}}/>
+                <img src="./Assets/emergency.svg" onClick={() => { toggleContacts() }} />
+                <img src="./Assets/add-contact.svg" onClick={() => { showAddContacts(true) }} />
             </div>
 
             <ul className="emergency-contacts"> {
                 emergencyContacts.map((contacts, index) => {
                     return (
-                        <AllContacts name={contacts[0]} contact={contacts[1]} key={index}/>
+                        <AllContacts name={contacts[0]} contact={contacts[1]} key={index} />
                     );
                 })
             }

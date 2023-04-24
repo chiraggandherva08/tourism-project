@@ -3,30 +3,43 @@
     max-width: 1000px;
 
     margin: auto;
+
+    padding-bottom: 100px;
 }
 
 .input-reviews {
-    width: 350px;
-    height: 60px;
+    width: 400px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     background: #f4f4f4;
-    padding: 0px 20px;
+    padding: 10px;
 
     border-radius: 10px;
 
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 
     margin-bottom: 20px;
 }
 
-#review-location {
+#review-location-name, #reviewer-name {
     width: 200px;
-    height: 25px;
+    height: 20px;
 
+    padding: 10px;
+
+    outline: 0;
+    border-style: none;
+
+    background: #e5e5e5;
+    color: black;
+
+    margin-bottom: 5px;
+}
+
+#review-location {
     padding: 5px 10px;
 
     outline: 0;
@@ -36,6 +49,12 @@
     background: #e5e5e5;
     color: black;
     border-radius: 4px;
+
+    max-width: 300px;
+    min-width: 100px;
+
+    max-height: 300px;
+    min-height: 20px;
 }
 
 #review-location:focus {
@@ -62,24 +81,82 @@
     text-decoration: underline;
 }
 
+#submit-reviews-heading {
+    width: calc(100vw - 100px);
+    max-width: 1000px;
+    margin: auto;
+    color: rgb(0, 83, 3);
+}
+
+/* --------------------------------- */
+.all-grouped-reviews {
+    
+    width: calc(100vw - 100px);
+    max-width: 1000px;
+    height: 200px;
+    
+    background: #000;
+    margin: auto;
+}
+
+#filter-for {
+    padding: 5px 20px;
+
+    width: 200px;
+    height: 30px;
+
+    outline: 0;
+    border-style: none;
+
+    background: #ececec;
+}
+
 .all-reviews {
     width: 100%;
-
     list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+#search-for-places {
+    font-size: 2em;
+    color: rgb(0, 83, 3);
+
+    font-weight: 500;;
 }
 
 .review {
     width: calc(100% - 50px);
     padding: 10px;
 
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.451);
+    border-bottom-style: solid;
+
+    margin-top: 5px;
 
     transition-duration: 0.3s;
 }
 
 .review:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-name-review {
+    width: 200px;
+
+    font-size: 1.2em;
+    text-decoration: underline;
+    color: rgb(77, 77, 77);
+
+    margin-bottom: 5px;
+}
+
+.review-message {
+    font-size: 14px;
 }

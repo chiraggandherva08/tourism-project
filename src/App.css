@@ -12,3 +12,7 @@ body {
 .header-bg {
     padding-bottom: 50px;
 }
+
+.travelling {
+    display: none;
+}

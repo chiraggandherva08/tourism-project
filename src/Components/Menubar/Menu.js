@@ -1,28 +1,18 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import './Style.css';
 
 const Menu = () => {
-
-    window.addEventListener("scroll", () => {
-        const navBar = document.querySelector(".nav-bar");
-
-        if (window.scrollY >= 400 && window.innerWidth > 600) {
-            navBar.classList.add("fixed-nav-bar");
-        }
-        else {
-            navBar.classList.remove("fixed-nav-bar");
-        }
-    })
 
     let isToggled = false;
     const toggleMenu = () => {
         if (window.innerWidth <= 830) {
             const menu = document.querySelector("#menuitems");
             if (!isToggled) {
-                menu.style.transform = "translateY(0%)";
+                menu.style.transform = "translateX(0%)";
                 isToggled = true;
             } else {
-                menu.style.transform = "translateY(100vh)";
+                menu.style.transform = "translateX(100vh)";
                 isToggled = false;
             }
         }
@@ -33,6 +23,8 @@ const Menu = () => {
         translate.classList.add("translator-toggle");
         toggleMenu();
     }
+
+    const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
 
     return (
         <React.Fragment>
@@ -60,6 +52,16 @@ const Menu = () => {
                         <li className="items" onClick={() => toggleTranslate()}>
                             <a className="menu-link" href="#Translate">Translate</a>
                         </li>
+
+                        { (isAuthenticated) ? ( <li id="login-menu-btn">
+                            <button onClick={() => logout( {returnTo: window.location.origin} )}>
+                                Log Out
+                            </button>
+                        </li>) : ( <li id="login-menu-btn">
+                            <button onClick={() => loginWithRedirect()}>
+                                Log In
+                            </button>
+                        </li>) }
                     </ul>
                 </li>
             </ul>

@@ -35,14 +35,10 @@ const Header = () => {
 		document.querySelector(".city-suggestions").style.display = 'none';
 	}
 
-	const getUserCurrentLocation = (event) => {
-		console.log(event.target.value);
-	}
-
 	return (
 		<React.Fragment>
 			<div className="user_locations" id="locations">
-				<input onChange={(event) => { getUserCurrentLocation(event) }} id="from-location" placeholder="Your Location" />
+				<input id="from-location" placeholder="Your Location" />
 
 				<div className="input-for-destination">
 

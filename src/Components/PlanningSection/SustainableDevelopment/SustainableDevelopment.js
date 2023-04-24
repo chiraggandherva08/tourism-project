@@ -23,7 +23,7 @@ const SustainableDevelopment = () => {
                     Sustainable development guidelines
                 </span>
                 <br />
-                for tourism in India can help ensure that tourism activities in the country are environmentally, socially, and economically sustainable. Here are some key guidelines that can be followed:
+                For tourism in India can help ensure that tourism activities in the country are environmentally, socially, and economically sustainable. Here are some key guidelines that can be followed:
             </h2>
 
             <ul className="SustainableDevelopment" id="SustainableDevelopment">
@@ -43,7 +43,7 @@ const SustainableDevelopment = () => {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    >
+                >
                 </iframe>
             </div>
 

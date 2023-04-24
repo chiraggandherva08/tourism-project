@@ -7,12 +7,13 @@ const TripPlanner = () => {
         const startingLocation = document.querySelector("#starting-point").value.trim();
         const endingLocation = document.querySelector("#ending-point").value.trim();
         const mode = document.querySelector("#mode-of-transport").value.trim().toLowerCase();
+        const purpose = document.querySelector("#purpose").value.trim().toLowerCase();
         let noOfDays = document.querySelector("#number-of-days").value.trim();
 
         if (noOfDays*0 != 0) {
-            console.log("not a number");
             return;
         }
+
 
         if (noOfDays == 0 || startingLocation == "" || endingLocation == "") {
             return;
@@ -21,13 +22,18 @@ const TripPlanner = () => {
             const text = document.querySelector(".creating-trip");
             animation.classList.add("display-flex");
             text.classList.add("display-flex");
-    
+
             const outputWindow = document.querySelector(".planned-trip");
             outputWindow.style.height = '0px';
             outputWindow.style.opacity = '0';
 
-            const query = `plan a ${noOfDays} day trip from ${startingLocation} to ${endingLocation} via ${mode}.`;
-            chatGPT_Response(query);
+            if (purpose == "") {
+                const query = `plan a ${noOfDays} day trip from ${startingLocation} to ${endingLocation} via ${mode} with some sustainable tips and time taken.`;
+                chatGPT_Response(query);
+            } else {
+                const query = `plan a ${noOfDays} day trip from ${startingLocation} to ${endingLocation} via ${mode} with some sustainable tips and time taken (purpose is - ${purpose}).`;
+                chatGPT_Response(query);
+            }
         }
     };
 
@@ -38,6 +44,7 @@ const TripPlanner = () => {
                     <input id="starting-point" type="text" placeholder="Starting point..."/>
                     <input id="ending-point" type="text" placeholder="Ending point..."/>
                     <input id="number-of-days" type="text" placeholder="Number of days.."/>
+                    <input id="purpose" type="text" placeholder="Purpose(Optional)"/>
 
                     <select id="mode-of-transport">
                         <option htmlFor="mode-of-transport" value="air" >By air</option>

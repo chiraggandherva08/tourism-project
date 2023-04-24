@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import './Styles.css';
+import allReviews from "./ReviewsData";
 
-const Review_ = ({ username, review }) => {
+const Review_ = ({ place, username, review }) => {
     return (
         <li className="review">
+            <div className="user-name-review">{place}</div>
             <div className="user-name-review">{username}</div>
             <div className="review-message">{review}</div>
         </li>
@@ -12,42 +14,60 @@ const Review_ = ({ username, review }) => {
 
 function Reviews() {
 
-    const [reviewsData, setReviewsData] = useState([]);
+    const [allData, setAllData] = useState([]);
 
-    const fetchAllReviews = () => {
-        fetch("./Json/reviewsdata.json").then(res => res.json()).then(
-            (res) => {
-                setReviewsData(res);
+    const addReview = () => {
+        // const rev = document.querySelector("#");
+    }
+
+    const filterAllReviews = () => {
+        const location = document.querySelector("#filter-for").value.toLowerCase().trim();
+        const filteredReviews = [];
+
+        if (location == "") {
+            setAllData([]);
+            return;
+        }
+
+        allReviews.map( arr => {
+            if (arr[0].startsWith(location)) {
+                filteredReviews.push(arr);
             }
-        )
-        const location = document.querySelector("#review-location").value.trim().toLowerCase();
-        const titleReviews = document.querySelector("#title-reviews");
-        titleReviews.innerText = `Reviews of ${location}`;
-
-        filterAllData(location);
-    }
-
-    const filterAllData = (location) => {
-        const filteredData = reviewsData.map((value) => {
-            value.includes(location);
         });
+        setAllData(filteredReviews[0][1]);
     }
-
 
     return (
         <React.Fragment>
-            <div className="review-section">
-                <div className="input-reviews">
-                    <input id="review-location" type="text" placeholder="Enter location..." />
-                    <button id="review-location-btn" onClick={() => { fetchAllReviews() }}>Search</button>
+            <h2 id="submit-reviews-heading" >Submit your review</h2>
+
+            <div className="review-section" id="reviews">
+                <div className="input-reviews" >
+                    <div className="inputs-for-review">
+                        <input type="text" id="review-location-name" placeholder="Enter location" />
+                        <input type="text" id="reviewer-name" placeholder="Enter your name" />
+                        <textarea cols="30" rows="5" id="review-location" type="text" placeholder="Enter review..." ></textarea>
+                    </div>
+
+                    <button id="review-location-btn" onClick={() => { addReview() }}>Submit</button>
                 </div>
 
+                <input type="text" id="filter-for" onChange={() => {filterAllReviews()}} placeholder="Filter for?" />
+
                 <h1 id="title-reviews"></h1>
+
                 <ul className="all-reviews">{
-                    <Review_/>
+                    (allData.length == 0) ? (
+                            <div id="search-for-places">Search For Places</div>
+                    ) : (
+                        allData.map( (place, index) => {
+                            return <Review_ key={index} username={place[0]} review={place[1]}/>
+                        })
+                    )
                 }
                 </ul>
             </div>
+
         </React.Fragment>
     );
 }
