@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Styles.css';
 import allReviews from "./ReviewsData";
+import { FaStar } from "react-icons/fa";
 
 const Review_ = ({ place, username, review }) => {
     return (
@@ -17,24 +18,38 @@ function Reviews() {
     const [allData, setAllData] = useState([]);
 
     const addReview = () => {
-        // const rev = document.querySelector("#");
+        const location = document.querySelector("#review-location-name").value.trim().toLowerCase();
+        const name = document.querySelector("#reviewer-name").value.trim().toLowerCase();
+        const review = document.querySelector("#review-location").value.trim().toLowerCase();
+
+        allReviews.push([location, name, review]);
+        filterAllReviews();
+        toggleAddReviewWindow();
+        return;
+    }
+
+    const toggleAddReviewWindow = () => {
+        document.querySelector(".inputs-for-review").classList.toggle("toggle-review-window");
     }
 
     const filterAllReviews = () => {
-        const location = document.querySelector("#filter-for").value.toLowerCase().trim();
-        const filteredReviews = [];
+        let filteredArr = [];
+        console.log(allReviews);
 
-        if (location == "") {
-            setAllData([]);
+        const val = document.querySelector("#filter-for").value.trim().toLowerCase();
+
+        if (val == "") {
+            setAllData(filteredArr);
             return;
         }
 
-        allReviews.map( arr => {
-            if (arr[0].startsWith(location)) {
-                filteredReviews.push(arr);
+        allReviews.map( (currentReview) => {
+            if (currentReview[0].startsWith(val)) {
+                filteredArr.push(currentReview);
             }
         });
-        setAllData(filteredReviews[0][1]);
+
+        setAllData(filteredArr);
     }
 
     return (
@@ -47,21 +62,22 @@ function Reviews() {
                         <input type="text" id="review-location-name" placeholder="Enter location" />
                         <input type="text" id="reviewer-name" placeholder="Enter your name" />
                         <textarea cols="30" rows="5" id="review-location" type="text" placeholder="Enter review..." ></textarea>
+                        <button id="review-location-btn" onClick={() => { addReview() }}>Submit</button>
                     </div>
-
-                    <button id="review-location-btn" onClick={() => { addReview() }}>Submit</button>
                 </div>
 
-                <input type="text" id="filter-for" onChange={() => {filterAllReviews()}} placeholder="Filter for?" />
+                <input type="text" id="filter-for" onChange={() => { filterAllReviews () }} placeholder="Filter for?" />
+                <button id="add-review-button-toggle" onClick={() => { toggleAddReviewWindow () }}> Add review? </button>
 
-                <h1 id="title-reviews"></h1>
+                <h1 id="title-reviews">
+                </h1>
 
                 <ul className="all-reviews">{
                     (allData.length == 0) ? (
-                            <div id="search-for-places">Search For Places</div>
+                        <div id="search-for-places">Search For Places</div>
                     ) : (
-                        allData.map( (place, index) => {
-                            return <Review_ key={index} username={place[0]} review={place[1]}/>
+                        allData.map((place, index) => {
+                            return <Review_ key={index} place={place[0]} username={place[1]} review={place[2]} stars={place[3]} />
                         })
                     )
                 }

@@ -84,6 +84,8 @@
         margin-top: 70px;
         box-shadow: none;
         background: transparent;
+
+        z-index: 0;
     }
 
     .planning-menu-item {

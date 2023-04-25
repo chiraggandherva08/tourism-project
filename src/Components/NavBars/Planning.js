@@ -7,7 +7,6 @@ const toggleWeather = () => {
 }
 
 const Planning = () => {
-
     return (
         <ul id="planning-menu" className="nav-bar">
             <li className="planning-menu-item">

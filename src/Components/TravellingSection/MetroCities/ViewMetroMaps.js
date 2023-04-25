@@ -9,7 +9,7 @@ const ViewMetroMaps = () => {
 
     return (
         <React.Fragment>
-            <button id="preview-map-btn" onClick={() => {togglePreview()}}>
+            <button className="preview-tab" onClick={() => {togglePreview()}}>
                 Preview Map
             </button>
         </React.Fragment>

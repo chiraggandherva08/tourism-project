@@ -6,13 +6,21 @@
 
 body {
     transition-duration: 0.3s;
-    background: rgb(247, 247, 247);
+    background: rgb(240, 240, 240);
 }
 
 .header-bg {
     padding-bottom: 50px;
 }
 
+.planning {
+    display: flex;
+    flex-direction: column;
+}
+
 .travelling {
+    padding-top: 60px;
+
     display: none;
+    flex-direction: column;
 }

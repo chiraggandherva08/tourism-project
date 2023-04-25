@@ -129,6 +129,15 @@
     color: rgb(135, 135, 135);
 }
 
+#voice-reco-button {
+    width: 100px;
+    height: 50px;
+
+    background: rgb(126, 156, 255);
+    margin-bottom: 20px;
+
+    cursor: pointer;
+}
 
 @media (max-width: 700px) {
     .translator {

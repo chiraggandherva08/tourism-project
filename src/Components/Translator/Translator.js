@@ -2,7 +2,6 @@ import React from "react";
 import './Style.css';
 
 const Translator = () => {
-
     const toggleTranslate = () => {
         const translate = document.querySelector(".translator");
         translate.classList.toggle("translator-toggle");
@@ -71,6 +70,8 @@ const Translator = () => {
                         <div className="user-output">
                         </div>
                     </div>
+
+                    {/* <button id="voice-reco-button" onClick={() => {startListening()}}>Hear</button> */}
                 </div>
             </div>
         </React.Fragment>
